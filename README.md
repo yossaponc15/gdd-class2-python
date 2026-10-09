@@ -1,6 +1,6 @@
 # 🚀 GDD Python — Class 2
 
-> 📅 ทุกวันเสาร์ 10:30–12:30 · GDD Coding School
+> 📅 ทุกวันเสาร์ 10:30–12:30 · GDD Coding School · 👨‍🏫 Kru Arm+Y
 > 📂 แต่ละสัปดาห์อยู่ในโฟลเดอร์ชื่อวันที่ เช่น `2026-10-10/` — ครูจะเพิ่มโฟลเดอร์ใหม่ทุกสัปดาห์
 
 ## 📚 ในโฟลเดอร์ของแต่ละสัปดาห์
@@ -21,7 +21,7 @@
 
 เปิด Terminal ไปที่โฟลเดอร์ที่อยากเก็บงาน แล้วพิมพ์
 ```bash
-git clone https://github.com/<ชื่อครู>/gdd-class2-python.git
+git clone https://github.com/yossaponc15/gdd-class2-python.git
 cd gdd-class2-python
 ```
 
