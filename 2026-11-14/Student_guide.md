@@ -47,6 +47,30 @@ return {"ready": len(reasons) == 0, "reasons": reasons}
 - ใช้ `if` แยกทุกข้อ **ไม่ใช้ `elif`** (ต้องได้เหตุผลครบทุกข้อ)
 - ข้อความต้องตรงกับโจทย์ทุกตัวอักษร: `สถานีปลายทางปิด` · `เชื้อเพลิงไม่เพียงพอ` · `งบประมาณไม่เพียงพอ` · `ห้องเก็บของยังไม่พร้อม`
 
+## ⭐ แสดงรายการ → Level 21
+```python
+if len(mission["packages"]) == 0:
+    print("ยังไม่มีพัสดุ")
+    return                              # return เปล่า = จบฟังก์ชัน
+number = 1
+for package in mission["packages"]:
+    print(f"{number}. {package['name']} | ...")    # ใน f"..." ใช้ ['...']
+    number += 1
+```
+- ฟังก์ชันแสดงผลใช้ `print` ไม่ต้อง return ค่า
+
+## ⭐ แสดงผลจาก dict → Level 22
+```python
+summary = cargo_summary(mission)        # เรียกครั้งเดียว เก็บไว้
+result = check_mission(mission)
+print(f"พัสดุ: {summary['count']} กล่อง")
+if result["ready"]:
+    print("สถานะ: พร้อมออกเดินทาง")
+else:
+    for reason in result["reasons"]:
+        print(f"- {reason}")
+```
+
 ## 🆘 Error ที่เจอบ่อย
 | Error / อาการ | สาเหตุ |
 |---|---|
@@ -54,3 +78,5 @@ return {"ready": len(reasons) == 0, "reasons": reasons}
 | `KeyError: 'destination'` | ใช้ `[...]` กับพัสดุที่ไม่มี key → ใช้ `.get()` |
 | Level 20 ได้เหตุผลแค่ข้อเดียว | ใช้ `elif` แทน `if` |
 | Level 20 ได้ `None` | ลืม `return` dict |
+| `SyntaxError` ใน f-string | ใช้ `"` ซ้อนใน `f"..."` → เปลี่ยนเป็น `['name']` |
+| Level 21 แสดงลำดับเป็น 1 ทุกบรรทัด | ตั้ง `number = 1` ไว้ **ใน** loop |
